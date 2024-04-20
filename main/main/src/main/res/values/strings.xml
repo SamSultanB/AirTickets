@@ -1,4 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="budapest">Будапешт</string>
+    <string name="price_example">от 22 264 ₽</string>
+    <string name="wherever">Куда угодно</string>
+    <string name="weekends">Выходные</string>
+    <string name="istanbul">Стамбул</string>
+    <string name="popular">Популярное направление</string>
 </resources>
