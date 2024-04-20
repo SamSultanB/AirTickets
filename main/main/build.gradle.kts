@@ -39,6 +39,9 @@ android {
 
 dependencies {
 
+    implementation(project(":common"))
+
+
     implementation(libs.viewBindingDelegate)
 
     implementation(libs.androidx.core.ktx)
