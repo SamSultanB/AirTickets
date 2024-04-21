@@ -7,7 +7,10 @@
     <dimen name="dp_3x">24dp</dimen>
     <dimen name="dp_4x">32dp</dimen>
     <dimen name="dp_5x">40dp</dimen>
+    <dimen name="dp_6x">48dp</dimen>
     <dimen name="_12dp">12dp</dimen>
     <dimen name="_36dp">36dp</dimen>
     <dimen name="_6dp">6dp</dimen>
+    <dimen name="_4dp">4dp</dimen>
+    <dimen name="_10dp">10dp</dimen>
 </resources>

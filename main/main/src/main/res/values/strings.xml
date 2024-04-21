@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="budapest">Будапешт</string>
-    <string name="price_example">от 22 264 ₽</string>
-    <string name="wherever">Куда угодно</string>
-    <string name="weekends">Выходные</string>
-    <string name="istanbul">Стамбул</string>
-    <string name="popular">Популярное направление</string>
-</resources>
