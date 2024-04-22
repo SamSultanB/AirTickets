@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/green_line"
-                android:textSize="14sp"
+                style="@style/TextViewNormalSmall"
                 android:text="@string/popular"/>
 
         </LinearLayout>

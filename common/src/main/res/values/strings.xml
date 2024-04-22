@@ -32,5 +32,6 @@
     <string name="example_time">17:45</string>
     <string name="dme">DME</string>
     <string name="infoAboutFlight">4ч в пути / Без пересадок</string>
+    <string name="subscribe">Подписка на цену</string>
 
 </resources>
