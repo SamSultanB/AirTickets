@@ -2,9 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bottom_sheet_corner"
-    android:layout_marginBottom="-16dp"
     android:orientation="vertical">
 
     <ImageButton
@@ -16,52 +14,43 @@
         android:layout_marginTop="@dimen/dp_2x"
         android:layout_gravity="center"/>
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dp_2x"
         android:layout_marginVertical="@dimen/dp_3x"
-        app:cardCornerRadius="@dimen/dp_2x"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="@color/transparent">
+        android:background="@drawable/rounded_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_2x">
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fromEditTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/card_grey"
-            android:orientation="vertical"
-            android:padding="@dimen/dp_2x">
+            style="@style/TextInputEditTextStyle"
+            android:hint="@string/to"
+            android:drawableStart="@drawable/ic_departure"
+            android:drawablePadding="@dimen/dp_1x"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fromEditTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/TextInputEditText"
-                android:hint="@string/to"
-                android:drawableStart="@drawable/ic_departure"
-                android:drawablePadding="@dimen/dp_1x"/>
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/inner_grey"
+            android:layout_marginVertical="@dimen/dp_1x"
+            />
 
-            <View
-                android:id="@+id/line"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/inner_grey"
-                android:layout_marginVertical="@dimen/dp_1x"
-                />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/toEditTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/from"
+            android:drawableStart="@drawable/ic_search2"
+            android:drawablePadding="@dimen/dp_1x"
+            android:drawableEnd="@drawable/ic_cancel"
+            style="@style/TextInputEditTextStyle"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/toEditTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/from"
-                android:drawableStart="@drawable/ic_search2"
-                android:drawablePadding="@dimen/dp_1x"
-                android:drawableEnd="@drawable/ic_cancel"
-                style="@style/TextInputEditText"/>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -171,30 +160,21 @@
 
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/dp_2x"
+        android:background="@drawable/rounded_bg"
         android:layout_marginVertical="@dimen/dp_4x"
-        app:cardCornerRadius="@dimen/dp_2x"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="@color/transparent">
+        android:layout_marginHorizontal="@dimen/dp_2x"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_2x">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/citiesRv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/card_grey"
-            android:orientation="vertical"
-            android:padding="@dimen/dp_2x">
+            android:layout_height="wrap_content"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/citiesRv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 
 </LinearLayout>

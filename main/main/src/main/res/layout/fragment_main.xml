@@ -15,8 +15,7 @@
         android:layout_marginHorizontal="@dimen/_94dp"
         android:layout_gravity="center"
         android:text="@string/main_page_title"
-        android:textSize="22sp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextViewHeadingStyle"
         android:textColor="@color/title_bg"/>
 
     <LinearLayout
@@ -55,7 +54,7 @@
                     android:id="@+id/fromEditTxt"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    style="@style/TextInputEditText"
+                    style="@style/TextInputEditTextStyle"
                     android:hint="@string/to"
                     android:layout_marginStart="@dimen/dp_1x"
                     app:layout_constraintStart_toEndOf="@id/searchIc"
@@ -79,7 +78,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:hint="@string/from"
-                    style="@style/TextInputEditText"
+                    style="@style/TextInputEditTextStyle"
                     app:layout_constraintStart_toStartOf="@id/fromEditTxt"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -96,8 +95,7 @@
         android:layout_marginTop="@dimen/dp_3x"
         android:layout_marginHorizontal="@dimen/dp_2x"
         android:text="@string/fly_with_music"
-        android:textSize="22sp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextViewHeadingStyle"
         android:textColor="@color/white"/>
 
     <androidx.recyclerview.widget.RecyclerView
