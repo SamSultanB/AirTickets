@@ -6,14 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/main_bg"
     android:orientation="vertical"
-    tools:context=".MainFragment">
+    tools:context=".presentation.MainFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_28dp"
         android:layout_marginHorizontal="@dimen/_94dp"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:text="@string/main_page_title"
         style="@style/TextViewHeadingStyle"
         android:textColor="@color/title_bg"/>
