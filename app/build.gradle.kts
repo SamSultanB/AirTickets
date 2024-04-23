@@ -43,12 +43,21 @@ dependencies {
 
     //modules
     implementation(project(":main:main"))
-    implementation(project(":common"))
+    implementation(project(":main:search"))
+    implementation(project(":hotels"))
+    implementation(project(":locations"))
+    implementation(project(":profile"))
+    implementation(project(":subscribes"))
 
+    implementation(project(":common"))
+    implementation(project(":core"))
 
     implementation(libs.viewBindingDelegate)
 
     implementation(libs.cicerone)
+
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -1,9 +1,10 @@
-package com.test.search
+package com.test.search.seeAll.presentation
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.test.search.R
 import com.test.search.databinding.FragmentSeeAllBinding
 
 class SeeAllFragment : Fragment(R.layout.fragment_see_all) {
