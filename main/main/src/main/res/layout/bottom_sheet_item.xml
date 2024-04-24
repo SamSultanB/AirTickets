@@ -40,15 +40,29 @@
             android:layout_marginVertical="@dimen/dp_1x"
             />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/toEditTxt"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/from"
-            android:drawableStart="@drawable/ic_search2"
-            android:drawablePadding="@dimen/dp_1x"
-            android:drawableEnd="@drawable/ic_cancel"
-            style="@style/TextInputEditTextStyle"/>
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/toEditTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/from"
+                android:drawableStart="@drawable/ic_search2"
+                android:drawablePadding="@dimen/dp_1x"
+                android:layout_weight="1"
+                style="@style/TextInputEditTextStyle"/>
+
+            <ImageButton
+                android:id="@+id/clearBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel"
+                android:background="@color/transparent"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -169,10 +183,17 @@
         android:orientation="vertical"
         android:padding="@dimen/dp_2x">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/citiesRv"
-            android:layout_width="match_parent"
-            android:layout_height="216dp"/>
+        <include
+            android:id="@+id/city1"
+            layout="@layout/cities_item"/>
+
+        <include
+            android:id="@+id/city2"
+            layout="@layout/cities_item" />
+
+        <include
+            android:id="@+id/city3"
+            layout="@layout/cities_item"/>
 
     </LinearLayout>
 

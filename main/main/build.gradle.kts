@@ -51,10 +51,18 @@ dependencies {
 
     implementation(libs.cicerone)
 
+    implementation(libs.gson)
+    implementation(libs.retrofit)
+    implementation(libs.gson.converter)
+    implementation(libs.okHttp)
+
+    implementation(libs.viewModelLifeCycle)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }

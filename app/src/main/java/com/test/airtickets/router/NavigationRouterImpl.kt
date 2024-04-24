@@ -27,7 +27,7 @@ class NavigationRouterImpl(private val router: Router): NavigationRouter<Navigat
         when(action){
             is NavigateTo.TicketsSection -> router.navigateTo(AppScreens.mainFragment())
             is NavigateTo.ChooseCountry -> router.navigateTo(AppScreens.chooseCountryFragment())
-            is NavigateTo.SeeAll -> router.navigateTo(AppScreens.seeAllFragment())
+            is NavigateTo.SeeAll-> router.navigateTo(AppScreens.seeAllFragment())
 
             is NavigateTo.HotelsSection -> router.navigateTo(AppScreens.hotelsFragment())
             is NavigateTo.LocationsSection -> router.navigateTo(AppScreens.mainFragment())

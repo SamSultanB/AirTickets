@@ -1,6 +1,7 @@
 package com.test.airtickets.router
 
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import com.test.common.utils.Constants
 import com.test.hotels.HotelsFragment
 import com.test.locations.LocationsFragment
 import com.test.main.presentation.MainFragment
@@ -13,7 +14,7 @@ object AppScreens {
 
     //Tickets section screens
     fun mainFragment() = FragmentScreen { MainFragment() }
-    fun chooseCountryFragment() = FragmentScreen { ChooseCountryFragment() }
+    fun chooseCountryFragment() = FragmentScreen() { ChooseCountryFragment() }
     fun seeAllFragment() = FragmentScreen { SeeAllFragment() }
 
     //Other sections

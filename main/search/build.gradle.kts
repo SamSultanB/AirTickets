@@ -40,6 +40,7 @@ android {
 dependencies {
 
     implementation(project(":common"))
+    implementation(project(":core"))
 
     implementation(libs.viewBindingDelegate)
 
@@ -47,6 +48,15 @@ dependencies {
     implementation(libs.koin.android)
 
     implementation(libs.cicerone)
+
+    implementation(libs.gson)
+    implementation(libs.retrofit)
+    implementation(libs.gson.converter)
+    implementation(libs.okHttp)
+
+    implementation(libs.viewModelLifeCycle)
+
+    implementation(libs.glide)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

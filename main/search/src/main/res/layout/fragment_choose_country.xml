@@ -27,7 +27,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fromEditTxt"
             style="@style/TextInputEditTextStyle"
             android:layout_width="0dp"
@@ -47,11 +47,11 @@
             app:layout_constraintStart_toStartOf="@id/fromEditTxt"
             app:layout_constraintTop_toBottomOf="@id/fromEditTxt"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/toTxt"
+            app:layout_constraintBottom_toTopOf="@id/toEditTxt"
             />
 
-        <TextView
-            android:id="@+id/toTxt"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/toEditTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/sochi"
@@ -76,7 +76,7 @@
             android:background="@color/transparent"
             android:src="@drawable/ic_cancel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/toTxt" />
+            app:layout_constraintTop_toTopOf="@id/toEditTxt" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -104,24 +104,8 @@
             android:textColor="@color/white"
             android:fontFamily="@font/roboto_medium" />
 
-        <include
-            android:id="@+id/firstFlightItem"
-            layout="@layout/airlines_item"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_1x" />
-
-        <include
-            android:id="@+id/secondFlightItem"
-            layout="@layout/airlines_item"
-            android:layout_marginTop="@dimen/dp_1x"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <include
-            android:id="@+id/thirdFlightItem"
-            layout="@layout/airlines_item"
-            android:layout_marginTop="@dimen/dp_1x"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ticketsRv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

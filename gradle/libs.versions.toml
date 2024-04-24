@@ -13,7 +13,10 @@ bindingDelegateVersion = "1.5.9"
 ciceroneVersion = "7.1"
 koinCore = "3.1.2"
 glideVersion = "4.16.0"
-
+gsonVersion = "2.10.1"
+retrofitVersion = "2.8.0"
+okHttpVersion = "4.2.1"
+vm = "2.7.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,6 +32,11 @@ cicerone = { module = "com.github.terrakok:cicerone", version.ref = "ciceroneVer
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinCore" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinCore" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glideVersion"}
+gson = { module = "com.google.code.gson:gson", version.ref = "gsonVersion"}
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion"}
+gson-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofitVersion"}
+okHttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okHttpVersion"}
+viewModelLifeCycle = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "vm"}
 
 
 [plugins]
