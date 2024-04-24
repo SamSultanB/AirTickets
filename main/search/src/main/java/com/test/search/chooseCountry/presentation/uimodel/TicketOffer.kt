@@ -1,11 +1,11 @@
 package com.test.search.chooseCountry.presentation.uimodel
 
 import com.test.core.adapterDelegate.DelegateAdapterItem
-import com.test.search.chooseCountry.domain.model.TicketModel
+import com.test.search.chooseCountry.domain.model.TicketOfferModel
 import java.text.NumberFormat
 import java.util.Locale
 
-data class Ticket(
+data class TicketOffer(
     val id: Int,
     val title: String,
     val timeRange: String,
@@ -20,8 +20,8 @@ data class Ticket(
     }
 }
 
-fun TicketModel.toUI(): Ticket{
-    return Ticket(
+fun TicketOfferModel.toUI(): TicketOffer{
+    return TicketOffer(
         id,
         title,
         timeRange,

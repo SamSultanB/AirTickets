@@ -1,6 +1,6 @@
 package com.test.search.chooseCountry.domain.model
 
-data class TicketModel(
+data class TicketOfferModel(
     val id: Int,
     val title: String,
     val timeRange: String,

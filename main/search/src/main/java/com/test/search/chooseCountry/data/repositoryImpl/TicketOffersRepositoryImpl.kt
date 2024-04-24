@@ -2,14 +2,14 @@ package com.test.search.chooseCountry.data.repositoryImpl
 
 import com.test.search.chooseCountry.data.dto.toModel
 import com.test.search.chooseCountry.data.local.Preferences
-import com.test.search.chooseCountry.data.remote.TicketsApi
+import com.test.search.chooseCountry.data.remote.TicketOffersApi
 import com.test.search.chooseCountry.domain.model.DestinationsModel
-import com.test.search.chooseCountry.domain.model.TicketModel
-import com.test.search.chooseCountry.domain.repository.TicketsRepository
+import com.test.search.chooseCountry.domain.model.TicketOfferModel
+import com.test.search.chooseCountry.domain.repository.TicketOffersRepository
 
-class TicketsRepositoryImpl(private val api: TicketsApi, private val preferences: Preferences): TicketsRepository {
+class TicketOffersRepositoryImpl(private val api: TicketOffersApi, private val preferences: Preferences): TicketOffersRepository {
 
-    override suspend fun getTickets(): List<TicketModel> {
+    override suspend fun getTickets(): List<TicketOfferModel> {
         return api.getTickets().tickets_offers.map { it.toModel() }
     }
 

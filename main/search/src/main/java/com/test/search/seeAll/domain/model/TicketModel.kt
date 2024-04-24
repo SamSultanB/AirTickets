@@ -12,8 +12,8 @@ data class TicketModel(
     val has_transfer: Boolean,
     val has_visa_transfer: Boolean,
 
-    val has_luggage: Boolean,
-    val priceLuggage: Int,
+    val has_luggage: Boolean?,
+    val priceLuggage: Int?,
     val has_hand_luggage: Boolean,
     val size: String?,
 

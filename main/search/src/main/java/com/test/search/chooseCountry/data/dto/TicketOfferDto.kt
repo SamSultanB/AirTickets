@@ -1,6 +1,6 @@
 package com.test.search.chooseCountry.data.dto
 
-import com.test.search.chooseCountry.domain.model.TicketModel
+import com.test.search.chooseCountry.domain.model.TicketOfferModel
 
 data class TicketDto(
     val id: Int,
@@ -9,8 +9,8 @@ data class TicketDto(
     val price: PriceDto
 )
 
-fun TicketDto.toModel(): TicketModel{
-    return TicketModel(
+fun TicketDto.toModel(): TicketOfferModel{
+    return TicketOfferModel(
         id,
         title,
         time_range.joinToString(" "),

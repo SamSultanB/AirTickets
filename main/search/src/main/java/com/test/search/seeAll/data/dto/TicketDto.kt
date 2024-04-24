@@ -1,5 +1,9 @@
 package com.test.search.seeAll.data.dto
 
+import com.test.search.seeAll.domain.model.ArrivalModel
+import com.test.search.seeAll.domain.model.DepartureModel
+import com.test.search.seeAll.domain.model.TicketModel
+
 data class TicketDto(
     val id: Int,
     val badge: String?,
@@ -15,3 +19,23 @@ data class TicketDto(
     val is_returnable: Boolean,
     val is_exchangable: Boolean
 )
+
+fun TicketDto.toModel(): TicketModel{
+    return TicketModel(
+        id,
+        badge,
+        price.value,
+        provider_name,
+        company,
+        DepartureModel(departure.town, departure.date, departure.airport),
+        ArrivalModel(arrival.town, arrival.date, arrival.airport),
+        has_transfer,
+        has_visa_transfer,
+        luggage?.has_luggage,
+        luggage?.price?.value,
+        hand_luggage.has_hand_luggage,
+        hand_luggage.size,
+        is_returnable,
+        is_exchangable
+    )
+}

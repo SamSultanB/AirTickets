@@ -26,6 +26,7 @@
                 android:background="@color/transparent"/>
 
             <TextView
+                android:id="@+id/turnBackDateTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dp_1x"
@@ -53,6 +54,7 @@
                 android:background="@color/transparent"/>
 
             <TextView
+                android:id="@+id/flightDateTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dp_1x"

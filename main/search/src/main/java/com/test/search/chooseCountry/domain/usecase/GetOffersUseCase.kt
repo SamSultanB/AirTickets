@@ -2,8 +2,8 @@ package com.test.search.chooseCountry.domain.usecase
 
 import com.test.search.chooseCountry.domain.repository.TicketOffersRepository
 
-class GetDestinationsUseCase(private val repository: TicketOffersRepository) {
+class GetOffersUseCase(private val repository: TicketOffersRepository) {
 
-    fun getDestinations() = repository.getDestinations()
+    suspend fun getTickets() = repository.getTickets()
 
 }

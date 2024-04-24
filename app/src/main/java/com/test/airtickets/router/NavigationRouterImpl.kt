@@ -13,7 +13,7 @@ class NavigationRouterImpl(private val router: Router): NavigationRouter<Navigat
             is NavigateTo.SeeAll -> router.navigateTo(AppScreens.seeAllFragment())
 
             is NavigateTo.HotelsSection -> router.navigateTo(AppScreens.hotelsFragment())
-            is NavigateTo.LocationsSection -> router.navigateTo(AppScreens.mainFragment())
+            is NavigateTo.LocationsSection -> router.navigateTo(AppScreens.locationFragment())
             is NavigateTo.SubscribesSection -> router.navigateTo(AppScreens.subscribesFragment())
             is NavigateTo.ProfileSection -> router.navigateTo(AppScreens.profileFragment())
         }
@@ -30,7 +30,7 @@ class NavigationRouterImpl(private val router: Router): NavigationRouter<Navigat
             is NavigateTo.SeeAll-> router.navigateTo(AppScreens.seeAllFragment())
 
             is NavigateTo.HotelsSection -> router.navigateTo(AppScreens.hotelsFragment())
-            is NavigateTo.LocationsSection -> router.navigateTo(AppScreens.mainFragment())
+            is NavigateTo.LocationsSection -> router.navigateTo(AppScreens.locationFragment())
             is NavigateTo.SubscribesSection -> router.navigateTo(AppScreens.subscribesFragment())
             is NavigateTo.ProfileSection -> router.navigateTo(AppScreens.profileFragment())
         }

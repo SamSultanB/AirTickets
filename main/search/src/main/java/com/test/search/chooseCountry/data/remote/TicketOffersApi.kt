@@ -1,14 +1,14 @@
 package com.test.search.chooseCountry.data.remote
 
 import com.google.gson.Gson
-import com.test.search.chooseCountry.data.dto.TicketsResponse
+import com.test.search.chooseCountry.data.dto.TicketsOfferResponse
 
 /**
  * Mock class for imitating network calls
  */
-class TicketsApi {
+class TicketOffersApi {
 
-    suspend fun getTickets(): TicketsResponse {
+    suspend fun getTickets(): TicketsOfferResponse {
 
         val jsonString = """
         {
@@ -54,7 +54,7 @@ class TicketsApi {
           ]
         }
     """.trimIndent()
-        return Gson().fromJson(jsonString, TicketsResponse::class.java)
+        return Gson().fromJson(jsonString, TicketsOfferResponse::class.java)
     }
 
 }
