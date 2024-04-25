@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -115,6 +116,7 @@ class OffersFragment : Fragment(R.layout.fragment_offers) {
                 val formattedDate = formatRussianDate(selectedDate.time)
                 if (type == 1){
                     binding.tab.turnBackDateTxt.text = formattedDate
+                    binding.tab.addIc.isVisible = false
                 }else{
                     binding.tab.flightDateTxt.text = formattedDate
                 }

@@ -9,7 +9,6 @@ import com.test.airtickets.application.MainApplication
 import com.test.airtickets.databinding.ActivityMainBinding
 import com.test.airtickets.router.NavigationRouterImpl
 import com.test.common.navigation.NavigateTo
-import java.util.Stack
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -36,6 +35,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         navigatorHolder.setNavigator(appNavigator)
 
     }
+
     override fun onResumeFragments() {
         super.onResumeFragments()
         navigatorHolder.setNavigator(appNavigator)
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     fun onTabSelected(tabId: Int) {
         when (tabId) {
-            R.id.tickets -> router.pop()
+            R.id.tickets -> router.navigateTo(NavigateTo.TicketsSection)
             R.id.hostels -> router.navigateTo(NavigateTo.HotelsSection)
             R.id.locations -> router.navigateTo(NavigateTo.LocationsSection)
             R.id.subscriptions -> router.navigateTo(NavigateTo.SubscribesSection)
