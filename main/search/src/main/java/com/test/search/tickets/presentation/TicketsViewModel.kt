@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.test.common.navigation.NavigateTo
 import com.test.common.network.NetworkStatus
 import com.test.core.navigation.NavigationRouter
+import com.test.search.tickets.domain.usecase.GetFlightInfoUseCase
 import com.test.search.tickets.domain.usecase.GetTicketsUseCase
 import com.test.search.tickets.presentation.uimodel.Ticket
 import com.test.search.tickets.presentation.uimodel.toUI
@@ -14,7 +15,8 @@ import kotlinx.coroutines.launch
 
 class TicketsViewModel(
     private val router: NavigationRouter<NavigateTo>,
-    private val getTicketsUseCase: GetTicketsUseCase
+    private val getTicketsUseCase: GetTicketsUseCase,
+    private val getFlightInfoUseCase: GetFlightInfoUseCase
 ): ViewModel() {
 
     private val _ticketsResponse: MutableLiveData<NetworkStatus<List<Ticket>>> = MutableLiveData()
@@ -35,5 +37,7 @@ class TicketsViewModel(
     fun navigateBack(){
         router.pop()
     }
+
+    fun getFlightInfo() = getFlightInfoUseCase.getFlightInfo()
 
 }

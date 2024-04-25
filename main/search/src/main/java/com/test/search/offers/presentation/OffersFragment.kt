@@ -32,28 +32,18 @@ class OffersFragment : Fragment(R.layout.fragment_choose_country) {
             .build()
     }
 
-    private lateinit var destinations: Destinations
+    lateinit var destinations: Destinations
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adaptersSetUp()
         viewModel.getTickets()
         observeTickets()
+
         destinations = viewModel.getDestinations()
+        binding.fromEditTxt.setText(destinations.start)
+        binding.toEditTxt.setText(destinations.destination)
         clickListeners()
-        binding.allTicketsBtn.setOnClickListener {
-            try {
-                viewModel.nextFragment()
-            }catch (e: Exception){
-                Log.e("nav", e.message ?: "Something")
-            }
-        }
-        binding.tab.turnBackDateBtn.setOnClickListener {
-            openDatePickerDialog(1)
-        }
-        binding.tab.flightDateBtn.setOnClickListener {
-            openDatePickerDialog(2)
-        }
     }
 
     private fun observeTickets(){
@@ -76,6 +66,23 @@ class OffersFragment : Fragment(R.layout.fragment_choose_country) {
                 binding.fromEditTxt.setText(destinations.start)
                 binding.toEditTxt.setText(destinations.destination)
             }
+        }
+        binding.allTicketsBtn.setOnClickListener {
+            try {
+                viewModel.saveFlightDate(binding.tab.flightDateTxt.toString())
+                viewModel.nextFragment()
+            }catch (e: Exception){
+                Log.e("nav", e.message ?: "Something")
+            }
+        }
+        binding.tab.turnBackDateBtn.setOnClickListener {
+            openDatePickerDialog(1)
+        }
+        binding.tab.flightDateBtn.setOnClickListener {
+            openDatePickerDialog(2)
+        }
+        binding.goBackBtn.setOnClickListener {
+            viewModel.navigateBack()
         }
     }
 

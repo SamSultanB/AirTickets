@@ -11,5 +11,5 @@ This project was done in short amount of time. Feature module is applied and Cle
 ## Installation
 
 Include steps or commands to install and set up the project. For example:
-1. Clone the repository: `git clone https://github.com/username/project.git`
-2. Install dependencies: `npm install`
+1. Clone the repository: `git clone https://github.com/SamSultanB/AirTickets.git`
+2. Install dependencies

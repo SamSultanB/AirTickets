@@ -96,6 +96,21 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 }
             }
         })
+
+        view.anywhereBtn.setOnClickListener {
+            view.toEditTxt.setText("Сочи")
+        }
+
+        view.bestsBtn.setOnClickListener {
+            Toast.makeText(requireContext(), "Горячие билеты", Toast.LENGTH_SHORT).show()
+        }
+        view.calendarBtn.setOnClickListener {
+            Toast.makeText(requireContext(), "Выходные", Toast.LENGTH_SHORT).show()
+        }
+        view.tripBtn.setOnClickListener {
+            Toast.makeText(requireContext(), "Сложный маршрут", Toast.LENGTH_SHORT).show()
+        }
+
         dialog.setContentView(view.root)
 
         dialog.show()

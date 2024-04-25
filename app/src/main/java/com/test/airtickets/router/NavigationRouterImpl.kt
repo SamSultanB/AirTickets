@@ -2,6 +2,7 @@ package com.test.airtickets.router
 
 import com.github.terrakok.cicerone.Router
 import com.test.common.navigation.NavigateTo
+import com.test.common.utils.Constants
 import com.test.core.navigation.NavigationRouter
 
 /**
@@ -16,6 +17,8 @@ class NavigationRouterImpl(private val router: Router): NavigationRouter<Navigat
             is NavigateTo.TicketsSection -> router.navigateTo(AppScreens.mainFragment())
             is NavigateTo.OffersFragment -> router.navigateTo(AppScreens.chooseCountryFragment())
             is NavigateTo.TicketsFragment -> router.navigateTo(AppScreens.seeAllFragment())
+
+
 
             is NavigateTo.HotelsSection -> router.navigateTo(AppScreens.hotelsFragment())
             is NavigateTo.LocationsSection -> router.navigateTo(AppScreens.locationFragment())

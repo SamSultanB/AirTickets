@@ -8,6 +8,7 @@ import com.test.search.offers.data.repositoryImpl.TicketOffersRepositoryImpl
 import com.test.search.offers.domain.repository.TicketOffersRepository
 import com.test.search.offers.domain.usecase.GetDestinationsUseCase
 import com.test.search.offers.domain.usecase.GetOffersUseCase
+import com.test.search.offers.domain.usecase.SaveFlightDateUseCase
 import com.test.search.offers.presentation.OffersViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -20,6 +21,7 @@ val offersModule = module {
     single<TicketOffersRepository> { TicketOffersRepositoryImpl(get(), get()) }
     single { GetDestinationsUseCase(get()) }
     single { GetOffersUseCase(get()) }
-    viewModel{ OffersViewModel(get<NavigationRouter<NavigateTo>>(), get(), get()) }
+    single { SaveFlightDateUseCase(get()) }
+    viewModel{ OffersViewModel(get<NavigationRouter<NavigateTo>>(), get(), get(), get()) }
 
 }

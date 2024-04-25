@@ -14,11 +14,11 @@ class Preferences(context: Context) {
     }
 
     fun getLastDestination(): String?{
-        return pref.getString(Constants.KEY_LAST_DESTINATION, null)
+        return pref.getString(Constants.KEY_LAST_DESTINATION, "")
     }
 
     fun saveFinalDestination(destination: String){
-        pref.edit().putString(Constants.KEY_DESTINATION, destination).apply()
+        pref.edit().putString(Constants.DESTINATION, destination).apply()
     }
 
 }

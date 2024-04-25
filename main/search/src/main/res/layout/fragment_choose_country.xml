@@ -19,7 +19,7 @@
         android:paddingStart="@dimen/dp_1x">
 
         <ImageView
-            android:id="@+id/searchIc"
+            android:id="@+id/goBackBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_arrow_back"
@@ -35,7 +35,7 @@
             android:layout_marginStart="@dimen/dp_1x"
             android:text="@string/minsk"
             app:layout_constraintEnd_toStartOf="@+id/replaceBtn"
-            app:layout_constraintStart_toEndOf="@id/searchIc"
+            app:layout_constraintStart_toEndOf="@id/goBackBtn"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View

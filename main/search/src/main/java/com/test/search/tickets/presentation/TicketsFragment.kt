@@ -27,8 +27,10 @@ class TicketsFragment : Fragment(R.layout.fragment_see_all) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         adaptersSetUp()
         viewModel.getTickets()
+        setData()
         observeTickets()
         binding.arrowBackBtn.setOnClickListener {
             viewModel.navigateBack()
@@ -49,6 +51,11 @@ class TicketsFragment : Fragment(R.layout.fragment_see_all) {
                 else -> {}
             }
         })
+    }
+
+    private fun setData(){
+        val data = viewModel.getFlightInfo()
+        binding.flightDirectionTxt.text = "${data.flightFrom} -  ${data.flightTo}"
     }
 
 }

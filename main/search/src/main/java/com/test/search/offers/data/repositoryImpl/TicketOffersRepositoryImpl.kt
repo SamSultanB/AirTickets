@@ -17,4 +17,8 @@ class TicketOffersRepositoryImpl(private val api: TicketOffersApi, private val p
         return DestinationsModel(preferences.getStart()!!, preferences.getDestination()!!)
     }
 
+    override fun saveFlightDate(flightDate: String) {
+        preferences.saveFlightDate(flightDate)
+    }
+
 }

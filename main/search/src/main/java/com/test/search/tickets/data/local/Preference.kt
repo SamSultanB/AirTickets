@@ -1,10 +1,9 @@
-package com.test.search.offers.data.local
+package com.test.search.tickets.data.local
 
 import android.content.Context
 import com.test.common.utils.Constants
-import com.test.search.offers.data.dto.TravelInfoDto
 
-class Preferences(context: Context) {
+class Preference(context: Context) {
 
     private val pref = context.getSharedPreferences(Constants.PREF_NAME, Context.MODE_PRIVATE)
 
@@ -16,8 +15,8 @@ class Preferences(context: Context) {
         return pref.getString(Constants.DESTINATION, "")
     }
 
-    fun saveFlightDate(flightDate: String){
-        pref.edit().putString(Constants.FLIGHT_DATE, flightDate).apply()
+    fun getDate(): String?{
+        return pref.getString(Constants.FLIGHT_DATE, "")
     }
 
 }

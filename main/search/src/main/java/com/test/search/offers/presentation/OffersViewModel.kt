@@ -9,6 +9,7 @@ import com.test.common.network.NetworkStatus
 import com.test.core.navigation.NavigationRouter
 import com.test.search.offers.domain.usecase.GetDestinationsUseCase
 import com.test.search.offers.domain.usecase.GetOffersUseCase
+import com.test.search.offers.domain.usecase.SaveFlightDateUseCase
 import com.test.search.offers.presentation.uimodel.Destinations
 import com.test.search.offers.presentation.uimodel.TicketOffer
 import com.test.search.offers.presentation.uimodel.toUI
@@ -17,7 +18,8 @@ import kotlinx.coroutines.launch
 class OffersViewModel(
     private val router: NavigationRouter<NavigateTo>,
     private val getOffersUseCase: GetOffersUseCase,
-    private val getDestinationsUseCase: GetDestinationsUseCase
+    private val getDestinationsUseCase: GetDestinationsUseCase,
+    private val saveFlightDateUseCase: SaveFlightDateUseCase
 ): ViewModel() {
 
     private val _ticketsResponse: MutableLiveData<NetworkStatus<List<TicketOffer>>> = MutableLiveData()
@@ -35,10 +37,12 @@ class OffersViewModel(
         }
     }
 
+    fun saveFlightDate(flightDate: String) = saveFlightDateUseCase.saveFlightDate(flightDate)
+
     fun getDestinations(): Destinations = getDestinationsUseCase.getDestinations().toUI()
 
-    fun nextFragment(){
-        router.replace(NavigateTo.TicketsFragment)
-    }
+    fun nextFragment() = router.replace(NavigateTo.TicketsFragment)
+
+    fun navigateBack() = router.pop()
 
 }

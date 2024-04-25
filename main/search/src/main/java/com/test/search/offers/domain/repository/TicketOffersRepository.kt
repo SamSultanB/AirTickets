@@ -9,4 +9,6 @@ interface TicketOffersRepository {
 
     fun getDestinations(): DestinationsModel
 
+    fun saveFlightDate(flightDate: String)
+
 }
