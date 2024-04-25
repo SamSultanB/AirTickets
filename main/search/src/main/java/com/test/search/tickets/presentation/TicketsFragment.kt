@@ -10,12 +10,12 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.test.common.network.NetworkStatus
 import com.test.core.adapterDelegate.AppAdapter
 import com.test.search.R
-import com.test.search.databinding.FragmentSeeAllBinding
+import com.test.search.databinding.FragmentTicketsBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class TicketsFragment : Fragment(R.layout.fragment_see_all) {
+class TicketsFragment : Fragment(R.layout.fragment_tickets) {
 
-    private val binding by viewBinding<FragmentSeeAllBinding>()
+    private val binding by viewBinding<FragmentTicketsBinding>()
 
     private val viewModel by viewModel<TicketsViewModel>()
 

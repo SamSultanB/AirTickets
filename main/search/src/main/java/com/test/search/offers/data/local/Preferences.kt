@@ -4,6 +4,9 @@ import android.content.Context
 import com.test.common.utils.Constants
 import com.test.search.offers.data.dto.TravelInfoDto
 
+/**
+ * Preference gets needed info from local storage
+ */
 class Preferences(context: Context) {
 
     private val pref = context.getSharedPreferences(Constants.PREF_NAME, Context.MODE_PRIVATE)

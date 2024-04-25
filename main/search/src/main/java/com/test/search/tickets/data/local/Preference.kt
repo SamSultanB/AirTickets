@@ -3,6 +3,9 @@ package com.test.search.tickets.data.local
 import android.content.Context
 import com.test.common.utils.Constants
 
+/**
+ * Preference gets needed info from local storage
+ */
 class Preference(context: Context) {
 
     private val pref = context.getSharedPreferences(Constants.PREF_NAME, Context.MODE_PRIVATE)

@@ -10,21 +10,26 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.test.common.network.NetworkStatus
+import com.test.common.utils.KeyBoardFilter
 import com.test.core.adapterDelegate.AppAdapter
 import com.test.search.R
 import com.test.search.offers.presentation.uimodel.Destinations
-import com.test.search.databinding.FragmentChooseCountryBinding
+import com.test.search.databinding.FragmentOffersBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
-class OffersFragment : Fragment(R.layout.fragment_choose_country) {
+class OffersFragment : Fragment(R.layout.fragment_offers) {
 
-    private val binding by viewBinding<FragmentChooseCountryBinding>()
+    private val binding by viewBinding<FragmentOffersBinding>()
 
     private val viewModel by viewModel<OffersViewModel>()
+
+    private val filter by lazy {
+        KeyBoardFilter()
+    }
 
     private val adapter by lazy {
         AppAdapter.Builder()
@@ -39,6 +44,9 @@ class OffersFragment : Fragment(R.layout.fragment_choose_country) {
         adaptersSetUp()
         viewModel.getTickets()
         observeTickets()
+
+        binding.fromEditTxt.filters = arrayOf(filter)
+        binding.toEditTxt.filters = arrayOf(filter)
 
         destinations = viewModel.getDestinations()
         binding.fromEditTxt.setText(destinations.start)

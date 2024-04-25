@@ -1,6 +1,5 @@
 package com.test.airtickets.presentation
 
-import android.accessibilityservice.AccessibilityService.ScreenshotResult
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -8,9 +7,9 @@ import com.github.terrakok.cicerone.androidx.AppNavigator
 import com.test.airtickets.R
 import com.test.airtickets.application.MainApplication
 import com.test.airtickets.databinding.ActivityMainBinding
-import com.test.airtickets.router.AppScreens
 import com.test.airtickets.router.NavigationRouterImpl
 import com.test.common.navigation.NavigateTo
+import java.util.Stack
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 

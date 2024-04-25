@@ -12,6 +12,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.test.common.network.NetworkStatus
+import com.test.common.utils.KeyBoardFilter
 import com.test.core.adapterDelegate.AppAdapter
 import com.test.main.R
 import com.test.main.databinding.BottomSheetItemBinding
@@ -24,6 +25,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private val viewModel by viewModel<MainViewModel>()
 
+    private val filter = KeyBoardFilter()
+
     private val adapter by lazy {
         AppAdapter.Builder()
             .add(OfferAdapterDelegate())
@@ -32,6 +35,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.fromEditTxt.filters = arrayOf(filter)
+        binding.toEditTxt.filters = arrayOf(filter)
 
         binding.fromEditTxt.setText(viewModel.getLastDestination())
 
@@ -55,6 +61,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         view.clearBtn.setOnClickListener {
             view.toEditTxt.setText("")
         }
+
+        view.fromEditTxt.filters = arrayOf(filter)
+        view.toEditTxt.filters = arrayOf(filter)
 
         val city1 = view.city1
         val city2 = view.city2

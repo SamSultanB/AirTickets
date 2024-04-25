@@ -7,6 +7,9 @@ import com.test.search.offers.domain.model.DestinationsModel
 import com.test.search.offers.domain.model.TicketOfferModel
 import com.test.search.offers.domain.repository.TicketOffersRepository
 
+/**
+ * Implementation of the [TicketOffersRepository] interface.
+ */
 class TicketOffersRepositoryImpl(private val api: TicketOffersApi, private val preferences: Preferences): TicketOffersRepository {
 
     override suspend fun getTickets(): List<TicketOfferModel> {
