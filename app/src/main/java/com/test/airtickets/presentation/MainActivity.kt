@@ -1,5 +1,6 @@
 package com.test.airtickets.presentation
 
+import android.accessibilityservice.AccessibilityService.ScreenshotResult
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import by.kirich1409.viewbindingdelegate.viewBinding

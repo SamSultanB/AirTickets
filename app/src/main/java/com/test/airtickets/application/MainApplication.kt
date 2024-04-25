@@ -4,11 +4,14 @@ import android.app.Application
 import com.github.terrakok.cicerone.Cicerone
 import com.test.airtickets.di.appModule
 import com.test.main.di.mainModule
-import com.test.search.chooseCountry.di.chooseCountryModule
-import com.test.search.seeAll.di.seeAllModule
+import com.test.search.offers.di.offersModule
+import com.test.search.tickets.di.ticketsModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
+/**
+ * Application class for managing global application state and dependencies.
+ */
 class MainApplication : Application(){
 
     private val cicerone = Cicerone.create()
@@ -22,11 +25,12 @@ class MainApplication : Application(){
         INSTANCE = this
         startKoin {
             androidContext(this@MainApplication)
-            modules(appModule, mainModule, chooseCountryModule, seeAllModule)
+            modules(appModule, mainModule, offersModule, ticketsModule)
         }
     }
 
     companion object {
+        // Singleton instance of the application
         internal lateinit var INSTANCE: MainApplication
             private set
     }

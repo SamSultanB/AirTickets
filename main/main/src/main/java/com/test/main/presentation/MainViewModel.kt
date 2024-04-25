@@ -29,7 +29,7 @@ class MainViewModel(
     val offersResponse: LiveData<NetworkStatus<List<Offer>>> get() = _offersResponse
 
     fun nextScreen(){
-        router.navigateTo(NavigateTo.ChooseCountry)
+        router.navigateTo(NavigateTo.OffersFragment)
     }
 
     fun saveDestination(destination: String) = saveDestinationUseCase.saveDestination(destination)

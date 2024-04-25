@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/main_bg"
     android:orientation="vertical"
-    tools:context=".chooseCountry.presentation.ChooseCountryFragment">
+    tools:context=".offers.presentation.OffersFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
