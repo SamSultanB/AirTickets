@@ -135,7 +135,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             when(status){
                 is NetworkStatus.Success -> adapter.submitList(status.data)
                 is NetworkStatus.Error -> Toast.makeText(requireContext(), status.message, Toast.LENGTH_SHORT).show()
-                is NetworkStatus.Loading -> {}
+                else-> {}
             }
         })
     }
