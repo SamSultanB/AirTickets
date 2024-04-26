@@ -1,6 +1,7 @@
 package com.test.search.tickets.presentation
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
@@ -34,9 +35,9 @@ class TicketsAdapterDelegate : DelegateAdapter<Ticket, TicketsAdapterDelegate.Ti
 
             val layoutParams = binding.container.layoutParams as ViewGroup.MarginLayoutParams
             if (ticket.badge == null){
-                binding.statusContainer.isVisible = false
+                binding.statusContainer.visibility = View.GONE
             }else{
-                binding.statusContainer.isVisible = true
+                binding.statusContainer.visibility = View.VISIBLE
                 binding.badgeTxt.text = ticket.badge
             }
             if(!ticket.has_transfer){
