@@ -1,15 +1,17 @@
 package com.test.main.presentation
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.test.common.network.NetworkStatus
 import com.test.common.utils.KeyBoardFilter
@@ -56,6 +58,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         val view = BottomSheetItemBinding.inflate(layoutInflater)
 
+        dialog.behavior.state = BottomSheetBehavior.STATE_EXPANDED
+
         view.fromEditTxt.setText(binding.fromEditTxt.text)
 
         view.clearBtn.setOnClickListener {
@@ -76,38 +80,85 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             .into(city3.cityImage)
 
         city2.root.setOnClickListener {
+            val DELAY_MILLIS = 1000L
+            val handler = Handler(Looper.getMainLooper())
+            var runnable: Runnable? = null
             view.toEditTxt.setText(city2.cityTxt.text)
+            runnable?.let { handler.removeCallbacks(it) }
+            runnable = Runnable {
+                if (view.toEditTxt.text!!.isNotEmpty()) {
+                    dialog.dismiss()
+                    viewModel.saveFinalDestination(view.toEditTxt.text.toString())
+                    viewModel.nextScreen()
+                }
+            }
+
+            handler.postDelayed(runnable!!, DELAY_MILLIS)
         }
 
         city3.root.setOnClickListener {
+            val DELAY_MILLIS = 1000L
+            val handler = Handler(Looper.getMainLooper())
+            var runnable: Runnable? = null
             view.toEditTxt.setText(city3.cityTxt.text)
+            runnable?.let { handler.removeCallbacks(it) }
+            runnable = Runnable {
+                if (view.toEditTxt.text!!.isNotEmpty()) {
+                    dialog.dismiss()
+                    viewModel.saveFinalDestination(view.toEditTxt.text.toString())
+                    viewModel.nextScreen()
+                }
+            }
+
+            handler.postDelayed(runnable!!, DELAY_MILLIS)
         }
 
         city1.root.setOnClickListener {
+            val DELAY_MILLIS = 1000L
+            val handler = Handler(Looper.getMainLooper())
+            var runnable: Runnable? = null
             view.toEditTxt.setText(city1.cityTxt.text)
+            runnable?.let { handler.removeCallbacks(it) }
+            runnable = Runnable {
+                if (view.toEditTxt.text!!.isNotEmpty()) {
+                    dialog.dismiss()
+                    viewModel.saveFinalDestination(view.toEditTxt.text.toString())
+                    viewModel.nextScreen()
+                }
+            }
+
+            handler.postDelayed(runnable!!, DELAY_MILLIS)
         }
-        view.toEditTxt.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // Not needed
-            }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // Not needed
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                val text = s.toString()
-
+        view.toEditTxt.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_NEXT) {
+                val text = view.toEditTxt.text.toString()
                 if (text.isNotEmpty()) {
                     dialog.dismiss()
                     viewModel.saveFinalDestination(text)
                     viewModel.nextScreen()
                 }
+                true // Return true to indicate that the event has been consumed
+            } else {
+                false // Return false to indicate that the event has not been consumed
             }
-        })
+        }
 
         view.anywhereBtn.setOnClickListener {
+            val DELAY_MILLIS = 1000L
+            val handler = Handler(Looper.getMainLooper())
+            var runnable: Runnable? = null
             view.toEditTxt.setText("Сочи")
+            runnable?.let { handler.removeCallbacks(it) }
+            runnable = Runnable {
+                if (view.toEditTxt.text!!.isNotEmpty()) {
+                    dialog.dismiss()
+                    viewModel.saveFinalDestination(view.toEditTxt.text.toString())
+                    viewModel.nextScreen()
+                }
+            }
+
+            handler.postDelayed(runnable!!, DELAY_MILLIS)
         }
 
         view.bestsBtn.setOnClickListener {

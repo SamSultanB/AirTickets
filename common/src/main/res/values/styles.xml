@@ -20,6 +20,7 @@
         <item name="android:textStyle">italic</item>
         <item name="android:singleLine">true</item>
         <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">@font/roboto</item>
     </style>
 
     <style name="TextViewNormalSmall">

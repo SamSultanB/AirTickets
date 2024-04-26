@@ -130,7 +130,7 @@ class OffersFragment : Fragment(R.layout.fragment_offers) {
 
     private fun formatRussianDate(date: Date): String {
         val dateFormat = SimpleDateFormat("d MMM, E", Locale("ru"))
-        return dateFormat.format(date)
+        return dateFormat.format(date).replace(".", "")
     }
 
 }
