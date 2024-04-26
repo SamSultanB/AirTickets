@@ -2,7 +2,7 @@
 
 ## This project was done as a test task (Note: API is mock, there was not provided api so here is imitated api response)
 
-This project was done in short amount of time. Feature module is applied and Clean Architecture.
+This project was done in short amount of time. Feature module and Clean Architecture are applied. 
 
 ## Enjoy
 
